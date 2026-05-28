@@ -1,0 +1,32 @@
+aid: cpfhub
+name: CPFHub
+description: "Brazilian CPF lookup — returns full name, birth date, and gender for any CPF"
+url: https://cpfhub.io
+specificationVersion: '0.20'
+created: '2026-05-28'
+modified: '2026-05-28'
+x-source: public-apis/public-apis
+x-category: "Government"
+x-tier: 3
+x-tier-reason: bulk-registered-from-public-apis
+tags:
+  - Government
+  - Public APIs
+apis:
+  - name: CPFHub
+    description: "Brazilian CPF lookup — returns full name, birth date, and gender for any CPF"
+    humanURL: https://cpfhub.io
+    baseURL: https://cpfhub.io
+    tags:
+      - Government
+    properties:
+      - type: Documentation
+        url: https://cpfhub.io
+common:
+  - type: Website
+    url: https://cpfhub.io
+  - type: PublicAPIsListing
+    url: https://github.com/public-apis/public-apis
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
