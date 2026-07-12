@@ -23,6 +23,8 @@ apis:
       - type: Documentation
         url: https://cpfhub.io
 common:
+  - type: DomainSecurity
+    url: security/cpfhub-domain-security.yml
   - type: Website
     url: https://cpfhub.io
   - type: PublicAPIsListing
