@@ -14,7 +14,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cpfhub.png
 name: CPFHub
 description: "Brazilian CPF lookup — returns full name, birth date, and gender for any CPF"
 url: https://cpfhub.io
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-05-28'
 modified: '2026-05-28'
 x-source: public-apis/public-apis
