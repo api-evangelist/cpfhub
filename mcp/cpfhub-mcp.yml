@@ -16,8 +16,12 @@ deployment:
 tools_count: 2
 tools:
 - name: lookup_cpf
-  description: ''
+  description: Consulta informações de um CPF brasileiro. Retorna nome, data de nascimento e gênero. Requer
+    autenticação via API key.
 - name: get_quota_info
-  description: ''
+  description: Retorna informações sobre o saldo de créditos e plano do usuário. Requer autenticação via
+    API key.
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
