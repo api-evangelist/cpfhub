@@ -39,7 +39,6 @@ apis:
   - name: CPFHub
     description: "Brazilian CPF lookup — returns full name, birth date, and gender for any CPF"
     humanURL: https://cpfhub.io
-    baseURL: https://cpfhub.io
     tags:
       - Government
     properties:
