@@ -1,0 +1,84 @@
+{
+  "endpoint": "https://api.cpfhub.io/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "cpfhub",
+    "version": "1.0.0"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "lookup_cpf",
+        "description": "Consulta informações de um CPF brasileiro na CPFHub.io. Retorna nome, data de nascimento e gênero. Requer autenticação via API key.",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "cpf": {
+              "type": "string",
+              "description": "CPF a ser consultado (apenas números ou formatado)"
+            },
+            "api_key": {
+              "description": "Sua API key da CPFHub.io (opcional se já enviada no header x-api-key da conexão)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "cpf"
+          ]
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "lookup_cpf_realtime",
+        "description": "Consulta um CPF brasileiro em tempo real na Receita Federal pela CPFHub.io. Retorna os dados cadastrais, a situação atual e deathYear (number | null, sempre presente). Data de nascimento divergente ou CPF inexistente na Receita retornam erro com code birth_date_mismatch ou cpf_not_found, sem cobrar créditos. Requer CPF, data de nascimento e autenticação via API key.",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "cpf": {
+              "type": "string",
+              "description": "CPF a ser consultado (apenas números ou formatado)"
+            },
+            "birth_date": {
+              "type": "string",
+              "description": "Data de nascimento no formato DD/MM/YYYY, DD-MM-YYYY, DDMMYYYY ou YYYY-MM-DD"
+            },
+            "api_key": {
+              "description": "Sua API key da CPFHub.io (opcional se já enviada no header x-api-key da conexão)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "cpf",
+            "birth_date"
+          ]
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "get_quota_info",
+        "description": "Retorna o mesmo conjunto de dados públicos de saldo de créditos e plano que GET /quota na CPFHub.io. Requer autenticação via API key.",
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "api_key": {
+              "description": "Sua API key da CPFHub.io (opcional se já enviada no header x-api-key da conexão)",
+              "type": "string"
+            }
+          }
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      }
+    ]
+  }
+}
